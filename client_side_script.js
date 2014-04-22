@@ -8,18 +8,22 @@ var items = [
 
 function toggleItem(itemName)
 {
-	var item = document.getElementById(itemName);
-	var itemtoggle = document.getElementById(itemName.concat("toggle"));
-	if(item.style.display == "none")
-	{
-		item.style.display = "";
-		itemtoggle.innerHTML = "&#8722";
-	}
-	else
-	{
-		item.style.display = "none";
-		itemtoggle.innerHTML = "+";
-	}
+	var item, itemtoggle;
+	$(document).ready(function(){
+		item = $("#"+itemName);
+		itemtoggle = $("#"+itemName+"toggle");
+		if(item.style.display == "none")
+		{
+			item.style.display = "";
+			itemtoggle.innerHTML = "&#8722";
+		}
+		else
+		{
+			item.style.display = "none";
+			itemtoggle.innerHTML = "+";
+		}
+	});
+	
 }
 
 
